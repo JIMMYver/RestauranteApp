@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-header bg-success text-white text-center fw-bold">
+            Registro Nuevo Usuario
+        </div>
+        <div class="card-body">
+            <form>
+                <img class="mb-4" src="{{ url_for('static', filename='img/Register.svg') }}" alt="" width="90" height="120">
+                <!-- Name input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="text" id="registerName" class="form-control" placeholder="Nombre Completo" />
+                    <label class="form-label" for="registerName">Nombre Completo</label>
+                </div>
+                <!-- Username input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="text" id="registerUsername" class="form-control" placeholder="Nombre Usuario"/>
+                    <label class="form-label" for="registerUsername">Nombre Usuario</label>
+                </div>
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="email" id="registerEmail" class="form-control" placeholder="Email"/>
+                    <label class="form-label" for="registerEmail">Email</label>
+                </div>
+        
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Contraseña"/>
+                    <label class="form-label" for="registerPassword">Contraseña</label>
+                </div>
+        
+                <!-- Repeat Password input -->
+                <div data-mdb-input-init class="form-outline mb-2">
+                    <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Confirmar Contraseña"/>
+                    <label class="form-label" for="registerRepeatPassword">Confirmar Contraseña</label>
+                </div>
+        
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-2">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" 
+                    checked aria-describedby="registerCheckHelpText"/>
+                    <label class="form-check-label" for="registerCheck">
+                        He leído y acepto todos los términos.
+                    </label>
+                </div>
+        
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="submit" class="btn btn-success btn-block mb-3">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
