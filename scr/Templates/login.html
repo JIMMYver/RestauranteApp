@@ -2,12 +2,13 @@
 {% block title %} Login {% endblock %}
 {% block content %}
 <div class="container">
+    <h1 class="animate__animated animate__bounce">Restaurante Gourmet de Guayaquil (Vera Saltos Jimmy )</h1>
     <div class="card mt-4">
         <div class="card-header bg-success text-white text-center fw-bold">
             Inicio De Sesión
         </div>
         <div class="card-body">
-            <form action="/login" method="post">
+            <form action="{{ url_for('login') }}" method="post">
                 <img class="mb-4" src="{{ url_for('static', filename='img/Login.svg') }}" alt="" width="90" height="120">
                 {% if errorlogin %}
                     <div class="alert alert-danger mt-2" role="alert">{{ errorlogin }}</div>

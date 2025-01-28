@@ -2,7 +2,7 @@
 {% block title %} Logout {% endblock %}
 {% block content %}
 <div class="content">
-    <h1 class="animate__animated animate__bounce">Se ha cerrado sesión correctamente <br> Adios {{nombreusuario}}, que pases bien</h1>
-    <a class="btn btn-success" href="/">Regresar Al Login</a>
+    <h1 class="animate__animated animate__bounce">¡Hasta pronto, {{nombres}}! <br> Tu sesión se ha cerrado con éxito. <br> ¡Cuídate mucho!</h1>
+    <a class="btn btn-success" href="{{ url_for('login') }}">Volver al inicio de sesión</a>
 </div>
 {% endblock %}

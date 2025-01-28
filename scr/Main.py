@@ -63,7 +63,12 @@ def getDescription(description):
 @login_required
 def index():
     listaTareas = Tarea.query.filter_by(userid=current_user.id).all()
-    return  render_template('index.html',Tareas=listaTareas, nombreusuario= current_user.fullname)
+    return  render_template('index.html',Tareas=listaTareas, nombres= current_user.fullname)
+
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', nombres= current_user.fullname)
 
 @app.route('/agregar', methods=['POST'])
 @login_required
@@ -84,7 +89,7 @@ def agregar():
 
     # Si hay un error, renderiza la plantilla pasando el error y el nombre del usuario
     listaTareas = Tarea.query.filter_by(userid=current_user.id).all()  # Solo las tareas del usuario actual
-    return render_template('index.html', Tareas=listaTareas, error_description=error_description, nombreusuario=current_user.fullname)
+    return render_template('index.html', Tareas=listaTareas, error_description=error_description, nombres=current_user.fullname)
 
 @app.route('/actualizar/<int:id_tarea>')
 @login_required
@@ -128,9 +133,9 @@ def login():
 
 @app.route('/logout')
 def logout():
-    nombreusuario = current_user.fullname
+    nombres = current_user.fullname
     logout_user()
-    return render_template('logout.html',nombreusuario= nombreusuario)
+    return render_template('logout.html',nombres= nombres)
 
 def status_401(error):
     return redirect(url_for('login'))

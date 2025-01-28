@@ -2,15 +2,27 @@
 {% block title %} Index {% endblock %}
 {% block content %}
 <div class="content">
-    <div class="d-flex justify-content-between align-items-center bg-success p-2">
-        <div class="text-start text-white">
-            <h4>{{ nombreusuario }}</h4>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success d-flex px-2">
+        <a class="navbar-brand ms-auto text-white" href="#">{{nombres}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto"> <!-- Aquí se añadió ms-auto para mover el dropdown al final -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('profile') }}">Profile</a>
+                        <a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="text-end">
-            <a href="/logout" class="btn" style="background-color: #c8e6c7;">Logout</a>
-        </div>
-    </div>
+    </nav>    
     <h1 class="animate__animated animate__bounce">Restaurante Gourmet de Guayaquil (Vera Saltos Jimmy )</h1>
+    
     <div class="card mt-4">
         <div class="card-header bg-success text-white text-center fw-bold">
             Crear Nueva Tarea
