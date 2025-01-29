@@ -48,6 +48,11 @@ with app.app_context():
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+
+def getNombreUsuario():
+    return current_user.fullname if current_user.is_authenticated else "Usuario"
+
+
 # Función para obtener la descripción
 def getDescription(description):
     description_lower = description.strip().lower()
@@ -59,16 +64,21 @@ def getDescription(description):
             return tarea  # Devuelve la tarea encontrada
     return None
 
+
+
+
 @app.route('/')
 @login_required
 def index():
     listaTareas = Tarea.query.filter_by(userid=current_user.id).all()
-    return  render_template('index.html',Tareas=listaTareas, nombres= current_user.fullname)
+    nombres=getNombreUsuario()
+    return  render_template('index.html',Tareas=listaTareas, nombres= nombres)
 
 @app.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', nombres= current_user.fullname)
+    nombres=getNombreUsuario()
+    return render_template('profile.html', nombres= nombres)
 
 @app.route('/agregar', methods=['POST'])
 @login_required
@@ -133,7 +143,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    nombres = current_user.fullname
+    nombres = getNombreUsuario()
     logout_user()
     return render_template('logout.html',nombres= nombres)
 
