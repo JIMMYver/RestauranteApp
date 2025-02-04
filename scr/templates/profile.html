@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %} Index {% endblock %}
+{% block content %}
+<div class="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success d-flex px-2">
+        <a class="navbar-brand ms-auto text-white" href="#">{{nombres}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto"> <!-- Aquí se añadió ms-auto para mover el dropdown al final -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/">Index</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+    <h1 class="animate__animated animate__bounce">Restaurante Gourmet de Guayaquil (Vera Saltos Jimmy )</h1>
+    
+     <!-- Información Personal -->
+     <div class="row mb-4 text-start">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ url_for('static', filename='img/Perfil.png') }}" class="card-img-top" alt="Foto de perfil">
+                <div class="card-body">
+                    <h5 class="card-title">Jimmy Wilson Vera Saltos</h5>
+                    <p class="card-text">
+                        <b>Fecha Nacimiento:</b> 16 abril 1997<br>
+                        <b>Lugar Nacimiento:</b> Los Ríos - Buena Fé<br>
+                        <b>Edad:</b> 24 años<br>
+                        <b>Estado Ciivl:</b> Soltero<br>
+                        <b>Dirección:</b> Cdl Vernaza Norte manzana 15 villa 27<br>
+                        <b>Correo:</b> verajimmy1997@gmail.com<br>
+                        <b>Teléfono:</b> 0982799278<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 text-start">
+            <div class="card mt-4">
+                <div id="perfil" class="card-header bg-success text-white text-center fw-bold">
+                    Perfil Profesional
+                </div>
+                <div class="card-body">
+                    <h3>Fortalezas</h3>
+                    <p class="fs-5">
+                    Soy una persona responsable, bastante dinámica, amigable, con deseos de superación, de aprender cosas nuevas 
+                    y mis metas están basadas en el lograr objetivos claros; capto rápido y cumplo de manera adecuada, puntualidad, 
+                    honestidad y responsabilidad en las distintas actividades que se designe.<br>
+                    </p>
+                    <h3>Objetivos</h3>
+                    <p class="fs-5">
+                    Lograr estabilidad laboral en una institución nacional o internacional y 
+                    terminar mis estudios para seguir creciendo profesionalmente y así seguir mejorando 
+                    mis habilidades y conocimientos, así como también adquirir la experiencia necesaria para
+                    colaborar con el desarrollo e innovación de la empresa, y desempeñando mis funciones con eficiencia 
+                    y seguir creciendo profesionalmente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experiencia Laboral -->
+    <div class="text-start row mb-4">
+        <div class="col-12">
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white text-center fw-bold">
+                    Experiencia Laboral
+                </div>
+                <div class="card-body">
+                    <ul class="list-group shadow">
+                        <li class="list-group-item">
+                            <b>Empresa:</b> HERNAN CATAGUA<br>
+                            <b>Tiempo: </b> 1 año 6 meses<br>
+                            <b>Cargo:</b> Vendedor<br>
+                            <b>Descripción:</b> Soy el enlace directo entre la empresa y sus clientes, 
+                            en tal sentido de vender una serie de productos, y llegar al objetivo del presupuesto mensual.
+                        </li>
+                        <li class="list-group-item">
+                            <b>Empresa:</b> TACONAZO<br>
+                            <b>Tiempo: </b> 2 años 11 meses<br>
+                            <b>Cargo:</b> Cajero<br>
+                            <b>Descripción:</b> Atención al cliente, facturación.
+                        </li>
+                        <li class="list-group-item">
+                            <b>Empresa:</b> Notaria 81 - Dr. Piero Aycart Vincenzini Carrasco<br>
+                            <b>Tiempo: </b> 1 año 6 meses - actualidad<br>
+                            <b>Cargo:</b> Asistente<br>
+                            <b>Descripción:</b> Encargado de ayudar en el proceso de redacción y 
+                            preparación de documentos legales y notariales, así como de asistir al notario en la 
+                            realización de sus funciones.<br> Este trabajo es fundamental en el ámbito legal, 
+                            ya que garantiza la validez y seguridad de los documentos que se elaboran en una notaría.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Educación -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white text-center fw-bold">
+                    Educación
+                </div>
+                <div class="card-body">
+                    <div class="row bg-white text-dark text-center shadow">
+                        <div class="col-md-4">
+                            <h4>Primaria</h4>
+                            <p><b>Institución:</b><br>Escuela Fiscal Mixta “13 DE ABRIL”</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Secundaria</h4>
+                            <p><b>Institución:</b> <br>Unidad Educativa Fiscal “ALEJO LASCANO BAHAMONDE”</p>
+                            <p><b>Título:</b><br>Bachiller En Ciencias</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Superior</h4>
+                            <p>III Semestre de Gastronomía</p>
+                            <p>Cursando 7mo semestre en la carrera de Gestión Gerencial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Habilidades -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white text-center fw-bold">
+                    Habilidades
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <p>HTML</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%;">50%</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <p>EXCEL</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="card mt-4 mb-4">
+        <div class="card-header bg-success text-white text-center fw-bold">
+            Idiomas
+        </div>
+        <div class="card-body">
+            <table class="table mt-3 fs-6">
+                <thead class="bg-success text-white">
+                    <tr>
+                        <th scope="col">IDIOMA</th>
+                        <th scope="col">NIVEL</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>Inglés</td>
+                        <td>Intermedio</td>
+                    </tr>
+                    <tr>
+                        <td>Español</td>
+                        <td>Nativo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
